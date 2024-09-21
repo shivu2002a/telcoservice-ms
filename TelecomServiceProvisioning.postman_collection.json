@@ -1,0 +1,1086 @@
+{
+	"info": {
+		"_postman_id": "3e0ac2cb-56ad-4b2c-81cc-c0992deaf284",
+		"name": "TelecomServiceProvisioning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21201274",
+		"_collection_link": "https://telco-group.postman.co/workspace/Telco-group-Workspace~d9fb1cdb-fbec-484e-a74a-6af51baa82d8/collection/21201274-3e0ac2cb-56ad-4b2c-81cc-c0992deaf284?action=share&source=collection_link&creator=21201274"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "InternetServices",
+					"item": [
+						{
+							"name": "UpdateService",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"serviceId\": 3,\r\n        \"serviceName\": \"Internet Service 3\",\r\n        \"description\": \"Description updated\",\r\n        \"serviceType\": \"Premium\",\r\n        \"serviceDownloadSpeed\": 60,\r\n        \"serviceUploadSpeed\": 40,\r\n        \"benefits\": \"benefits here2\",\r\n        \"criteria\": null,\r\n        \"active\": true,\r\n        \"cost\": 500.0,\r\n        \"validity\": 84,\r\n        \"createdAt\": \"2024-09-11T14:30:25.176+00:00\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/admin/api/internet-service",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"internet-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "InternetServices",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "Shivasa",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "39325",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8082/admin/api/internet-service",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"internet-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"serviceName\": \"Internet Service 3\",\r\n  \"description\": \"Description here\",\r\n  \"benefits\": \"benefits here2\",\r\n  \"serviceType\":\"Premium\",\r\n  \"serviceDownloadSpeed\":60,\r\n  \"serviceUploadSpeed\":40,\r\n  \"cost\": 500,\r\n  \"validity\":84\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/admin/api/internet-service",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"internet-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Terminate",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/admin/api/internet-service?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"internet-service"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "# All requests done"
+				},
+				{
+					"name": "PendingRequests",
+					"item": [
+						{
+							"name": "PRs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/admin/api/approval-requests",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"approval-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PRs",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n       \"requestId\": 4,\r\n        \"serviceId\": 4,\r\n        \"userId\": 2,\r\n        \"serviceType\": \"INTERNET_SERVICE\",\r\n        \"requestStatus\": \"APPROVED\",\r\n        \"remarks\": \"Have this\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/admin/api/approval-requests",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"approval-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PR",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ServiceID\":\"1\",\r\n    \"requestStatus\":\"DISAPPROVED\",\r\n    \"remarks\":\"Update\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/admin/api/approval-requests",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"approval-requests"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "**Yet to do**"
+				},
+				{
+					"name": "TVServices",
+					"item": [
+						{
+							"name": "TvService",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"serviceName\": \"TvService2\",\r\n  \"description\": \"Description here\",\r\n  \"benefits\": \"benefits here2\",\r\n  \"serviceType\":\"Premium\",\r\n  \"cost\":600,\r\n  \"validity\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/admin/api/tv-service",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"tv-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"serviceId\": 3,\r\n        \"serviceName\": \"TvService2\",\r\n        \"description\": \"updated this\",\r\n        \"benefits\": \"benefits here2\",\r\n        \"criteria\": null,\r\n        \"serviceType\": \"Premium\",\r\n        \"active\": true,\r\n        \"cost\": 600.0,\r\n        \"validity\": 100\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/admin/api/tv-service",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"tv-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Terminate",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/admin/api/tv-service?id=4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"tv-service"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TvServices",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/admin/api/tv-service",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"tv-service"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "# All requests done"
+				},
+				{
+					"name": "Feedbacks",
+					"item": [
+						{
+							"name": "Get all feedbacks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/admin/api/feedbacks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"admin",
+										"api",
+										"feedbacks"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign up req",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Shivasa\",\r\n    \"email\":\"a@g.com\",\r\n    \"phonenumber\":\"1234567890\",\r\n    \"password\":\"39325\",\r\n    \"address\":\"City:Bangalore,State:Karnataka\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in req",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "39325",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "admin39325",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "Shivasa",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "39325",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8082/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkLoggedInUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8082/checkLoggedInUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"checkLoggedInUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# All requests done"
+		},
+		{
+			"name": "PendingRequests",
+			"item": [
+				{
+					"name": "Get All prs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/admin/api/approval-requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"admin",
+								"api",
+								"approval-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disapprove request",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"requestId\": 1,\r\n        \"serviceId\": 3,\r\n        \"userId\": 1,\r\n        \"serviceType\": \"INTERNET_SERVICE\",\r\n        \"requestStatus\": \"DISAPPROVED\",\r\n        \"remarks\": \"Can't let you have it man !!\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/admin/api/approval-requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"admin",
+								"api",
+								"approval-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve Request",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"requestId\": 3,\r\n        \"serviceId\": 2,\r\n        \"userId\": 1,\r\n        \"serviceType\": \"TV_SERVICE\",\r\n        \"requestStatus\": \"APPROVED\",\r\n        \"remarks\": \"Enjoy for one month\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/admin/api/approval-requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"admin",
+								"api",
+								"approval-requests"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HomePage",
+			"item": [
+				{
+					"name": "All Internet services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/internet-services/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"internet-services",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details Of A Internet Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/internet-services/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"internet-services",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All tv services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/tv-services/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"tv-services",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details of a tv service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/tv-services/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"tv-services",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "TvServices",
+					"item": [
+						{
+							"name": "Subscribe to tv service",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/user/api/tv-service?serviceId=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"tv-service"
+									],
+									"query": [
+										{
+											"key": "serviceId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Terminate tv service availed",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/user/api/tv-service?availedServiceId=2&startDate=2024-09-11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"tv-service"
+									],
+									"query": [
+										{
+											"key": "availedServiceId",
+											"value": "2"
+										},
+										{
+											"key": "startDate",
+											"value": "2024-09-11"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"oldServiceId\":2,\r\n    \"newServiceId\":4,\r\n    \"startDate\":\"2024-09-12\",\r\n    \"endDate\":\"2024-12-11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/user/api/tv-service",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"tv-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Services for modify",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/user/api/tv-service/other?serviceType=Basic&serviceName=TvService2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"tv-service",
+										"other"
+									],
+									"query": [
+										{
+											"key": "serviceType",
+											"value": "Basic"
+										},
+										{
+											"key": "serviceName",
+											"value": "TvService2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Feedbacks",
+					"item": [
+						{
+							"name": "Internet service feedback",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/user/api/internet-service/feedback?availedServiceId=1&feedback=Newfeedback",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"internet-service",
+										"feedback"
+									],
+									"query": [
+										{
+											"key": "availedServiceId",
+											"value": "1"
+										},
+										{
+											"key": "feedback",
+											"value": "Newfeedback"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tv Service feedback",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/user/api/tv-service/feedback?availedServiceId=1&feedback=Good service. Satisfied",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"tv-service",
+										"feedback"
+									],
+									"query": [
+										{
+											"key": "availedServiceId",
+											"value": "1"
+										},
+										{
+											"key": "feedback",
+											"value": "Good service. Satisfied"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "InternetServices",
+					"item": [
+						{
+							"name": "subscribe to internet service",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/user/api/internet-service?serviceId=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"internet-service"
+									],
+									"query": [
+										{
+											"key": "serviceId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Terminate availed internet service",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/user/api/internet-service?availedServiceId=1&startDate=2024-09-12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"internet-service"
+									],
+									"query": [
+										{
+											"key": "availedServiceId",
+											"value": "1"
+										},
+										{
+											"key": "startDate",
+											"value": "2024-09-12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Services for modify",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/user/api/internet-service/other?serviceType=Basic&serviceName=TvService2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"internet-service",
+										"other"
+									],
+									"query": [
+										{
+											"key": "serviceType",
+											"value": "Basic"
+										},
+										{
+											"key": "serviceName",
+											"value": "TvService2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify subcription",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"oldServiceId\":2,\r\n    \"newServiceId\":4,\r\n    \"startDate\":\"2024-09-12\",\r\n    \"endDate\":\"2024-12-11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/user/api/tv-service",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"user",
+										"api",
+										"tv-service"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "All subscribed",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/user/api/subscribed-services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"user",
+								"api",
+								"subscribed-services"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

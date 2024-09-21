@@ -1,0 +1,17 @@
+INSERT INTO `internet_services` (`service_id`, `active`, `benefits`, `cost`, `created_at`, `criteria`, `description`, `service_download_speed`, `service_name`, `service_type`, `service_upload_speed`, `validity`)
+VALUES
+(11, 1, 'Unlimited Data, No FUP', 25.99, NOW(), 'Residential', 'Basic internet plan', 25, 'SuperFast', 'BASIC', 10, 30),
+(12, 1, 'Unlimited Data, No FUP', 40.99, NOW(), 'Residential', 'Premium internet plan', 100, 'SuperFast', 'PREMIUM', 50, 30),
+(13, 1, 'Unlimited Data, No FUP', 30.99, NOW(), 'Residential', 'Standard internet plan', 50, 'SuperFast', 'STANDARD', 20, 30),
+
+(14, 1, 'Unlimited Data, No FUP', 29.99, NOW(), 'Commercial', 'Basic plan for offices', 30, 'OfficeNet', 'BASIC', 15, 60),
+(15, 1, 'Unlimited Data, No FUP', 55.99, NOW(), 'Commercial', 'Premium plan for offices', 150, 'OfficeNet', 'PREMIUM', 75, 60),
+(16, 1, 'Unlimited Data, No FUP', 45.99, NOW(), 'Commercial', 'Standard plan for offices', 75, 'OfficeNet', 'STANDARD', 30, 60),
+
+(17, 1, 'Data with 1TB FUP', 20.99, NOW(), 'Residential', 'Basic internet plan with FUP', 20, 'UltraNet', 'BASIC', 5, 30),
+(18, 1, 'Data with 1TB FUP', 35.99, NOW(), 'Residential', 'Premium internet plan with FUP', 120, 'UltraNet', 'PREMIUM', 60, 30),
+(19, 1, 'Data with 1TB FUP', 28.99, NOW(), 'Residential', 'Standard internet plan with FUP', 70, 'UltraNet', 'STANDARD', 25, 30);
+
+
+Tv Services:
+
