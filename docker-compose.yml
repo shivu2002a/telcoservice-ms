@@ -1,0 +1,51 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-man
+    environment:
+      MYSQL_ROOT_PASSWORD: localhost
+      MYSQL_DATABASE: telcoservice
+    ports:
+      - "10000:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+  spring-application:
+    image: telcoservice-backend
+    container_name: telcoservice-spring-app
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/telcoservice?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: localhost
+    ports:
+      - "8082:8082"
+    networks:
+      - app-network
+    restart: on-failure
+
+  react-application:
+    image: telcoservice-frontend
+    container_name: telcoservice-react-app
+    depends_on:
+      - spring-application
+    # environment:
+    #   SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/telcoservice?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+    #   SPRING_DATASOURCE_USERNAME: root
+    #   SPRING_DATASOURCE_PASSWORD: localhost
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    restart: on-failure
+
+volumes:
+  mysql-data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
